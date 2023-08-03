@@ -1,0 +1,171 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.3;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #21252e;
+    color: #fefefe;
+}
+
+.container {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.card {
+    background-color: #2b3038;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    position: relative;
+    padding-top: 300px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 2px 20px #111;
+    transition: transform 0.3s ease;
+} 
+
+.card > .bi {
+    position: absolute;
+    top: 1rem;
+    right: -2rem;
+    font-size: 2rem;
+    z-index: 8;
+    transition: right 0.3s ease;
+}
+
+.card:hover > .bi {
+    right: 1rem;
+}
+
+.card .card-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 300px;
+    width: 100%;
+    background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+    overflow: hidden;
+    transition: height 0.3s ease;
+}
+
+.card .card-top img {
+    width: calc(100% - 2rem);
+    height: auto;
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.card .card-top::after {
+    content: '';
+    position: absolute;
+    top: 300px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(0deg, #2b3038 0%, rgba(0,0,0,0.1) 100%);
+    z-index: 9;
+}
+
+.card:nth-child(1) .card-top img {
+    transform: scale(3);
+    top: 80px;
+    left: -40px;
+}
+
+.card:nth-child(2) .card-top img {
+    transform: scale(3);
+    top: 300px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card:hover .card-top {
+    height: 100%;
+}
+
+.card:hover .card-top img {
+    transform: scale(3.1);
+}
+
+.card .card-body {
+    padding: 2rem 1.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+.card .card-body .title {
+    font-size: 1.5rem;
+    margin: 0 0 1rem;
+}
+
+.card .card-body p {
+    color: rgb(166, 166, 166);
+    margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.card .card-body .skills-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card .card-body .skill {
+    width: calc(50% - 1rem);
+    display: flex;
+    font-size: 0.75rem;
+}
+
+.card .card-body .skill i {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.25rem;
+    border-radius: 50%;
+    display: block;
+    margin-right: 0.5rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .card-body .skill .text {
+    display: flex;
+    flex-direction: column;
+}
+
+.card .card-body .skill .text span:nth-child(2) {
+    color: #999;
+}
+
+.card .card-body .skill:nth-child(1) i {
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.card .card-body .skill:nth-child(2) i {
+    background-image: linear-gradient(135deg, #0ba360 0%, #3cba92 100%);
+}
+
+.card .card-body .skill:nth-child(3) i {
+    background-image: linear-gradient(135deg, #00c6fb 0%, #005bea 100%);
+}
+
+.card .card-body .skill:nth-child(4) i {
+    background-image: linear-gradient(135deg, #f77062 0%, #fe5196 100%);
+}
